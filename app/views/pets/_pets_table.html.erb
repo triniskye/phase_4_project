@@ -1,0 +1,18 @@
+<table class="pets-table">
+    <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Gender</th>
+        <th>Breed</th>
+    </tr>
+    <%= @pets.each do |pet| %>
+        <tr> 
+            <td><%= pet.name %></td>
+            <td><%= pet.age %></td>
+            <td><%= pet.gender %></td>
+            <td><%= pet.breed %></td>
+            <td><img src=<%= pet.url %> width="100"></td>
+            <td><button class="adopt-button">Adopt</button></td>
+        </tr>
+    <% end %>
+</table>
