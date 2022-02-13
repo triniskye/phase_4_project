@@ -13,7 +13,7 @@
             <td><%= pet.gender %></td>
             <td><%= pet.breed %></td>
             <td><img src=<%= pet.url %> width="100"></td>
-            <td><button class="view-button">View</button></td>
+            <td><button class="view-button"><%= link_to "View", pet_path(pet)%> </button></td>
         </tr>
     <% end %>
 </table>
