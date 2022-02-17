@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   # post "/pets" => "pets#create"
   # get "/pets/new" => "pets#new", as: "new_pet"
   # get "/pets/:id" => "pets#show", as: "pet"
+  get "/news" => "static#news"
+  get "/contact" => "static#contact"
 
   
   get "/login" => "users#login"

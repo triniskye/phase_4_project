@@ -1,5 +1,7 @@
 
-<table class="pets-table">
+
+
+<table class="pets-table" style="margin-left: 30vw">
     <tr>
         <th>Name</th>
         <th>Age</th>
@@ -8,12 +10,12 @@
     </tr>
     <% @pets.each do |pet| %>
         <tr> 
-            <td><%= pet.name %></td>
-            <td><%= pet.age %></td>
-            <td><%= pet.gender %></td>
-            <td><%= pet.breed %></td>
-            <td><img src=<%= pet.url %> width="100"></td>
-            <td><button class="view-button"><%= link_to "View", pet_path(pet)%> </button></td>
+            <td style="padding: 2vw"><%= pet.name %></td>
+            <td style="padding: 2vw"><%= pet.age %></td>
+            <td style="padding: 2vw"><%= pet.gender %></td>
+            <td style="padding: 2vw"><%= pet.breed %></td>
+            <td style="padding: 2vw"><img src=<%= pet.image_address %> width="100"></td>
+            <td style="padding: 2vw"><button class="view-button"><%= link_to "View", pet_path(pet)%> </button></td>
         </tr>
     <% end %>
 </table>

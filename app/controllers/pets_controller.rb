@@ -11,6 +11,7 @@ class PetsController < ApplicationController
     end
     def create
         pet= Pet.new(pet_params)
+        pet.adoptable = true
 
         if pet.save
             redirect_to pet_path(pet)
@@ -22,6 +23,6 @@ class PetsController < ApplicationController
 
     private
     def pet_params
-        params.require(:pet).permit(:name, :age, :gender, :breed, :description)
+        params.require(:pet).permit(:name, :age, :gender, :breed, :image_address, :description)
     end
 end

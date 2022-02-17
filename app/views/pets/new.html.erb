@@ -1,31 +1,13 @@
 <h1>List A Pet For Adoption</h1>
 
-<%= form_for(@pet) do |f| %>
-    <div>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    </div>
-    <div>
-    <%= f.label :age %>
-    <%= f.text_field :age %>
-    </div>
-    <div>
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
-    </div>
-    <div>
-    <%= f.label :breed %>
-    <%= f.text_field :breed %>
-    </div>
-    <div>
-    <%= f.label :url %>
-    <%= f.text_area :url%>
-    </div>
-    <div>
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-    </div>
-    <div>
-    <%= f.submit "List Pet" %>
-    </div>
-<%end%>
+    <form action="/pets" method="POST">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
+        <input type="text" name="pet[name]" placeholder="name"><br>
+        <input type="text" name="pet[age]" placeholder="age"><br>
+        <input type="text" name="pet[gender]" placeholder="gender"><br>
+        <input type="text" name="pet[breed]" placeholder="breed/species"><br>
+        <input type="text" name="pet[image_address]" placeholder="image url"><br>
+        <input type="text" name="pet[description]" placeholder="short description"><br>
+        <input type="submit" name="submit" class="submit">
+    </form>
+

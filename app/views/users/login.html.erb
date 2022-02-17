@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <title>Login</title>
 </head>
-<body>
-    <h1>Login</h1>
+<body style="text-align: center;">
+    <h1><span> <button><%=link_to "Back", pets_path %></button> Login</span></h1>
     <form action="/sessions" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
-        <input type="email" name="login[email]" placeholder="email">
-        <input type="password" name="login[password]" placeholder="password">
+        <input type="email" name="login[email]" placeholder="email"><br>
+        <input type="password" name="login[password]" placeholder="password"><br><br>
         <input type="submit" name="submit" class="submit">
-    </form>
+    </form><br>
     <div>
-       <span>New here? <button><%=link_to "Signup", signup_path %></span>
-    </div>  
+       <span>New here? <button><%=link_to "Sign up", signup_path %></button></span>
+    </div>
 </body>
 </html>
