@@ -8,11 +8,11 @@ class UsersController < ApplicationController
         @display = @@message
     end
     def create
-        existing = User.where(email: user_params[:email])
-        if existing.count <=1 && user_params[:password_digest] == user_params[:password_confirmation]
+
+        if User.where(email: user_params[:email]).count < 1 
             user = User.new(user_params)
             user.save
-            redirect_to "/"
+            redirect_to "/login"
         else
             redirect_to "/signup"
             @@message = @@message_options[:fail_message]

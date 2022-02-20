@@ -12,6 +12,11 @@
 <body style="text-align: center;">
 <div class="error">
 <h2><%= @display %></h2>
+<% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
 
 </div>
 
