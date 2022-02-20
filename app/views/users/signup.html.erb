@@ -11,7 +11,7 @@
 
 <body style="text-align: center;">
 <div class="error">
-<h2><%= @display %></h2>
+<h1>Sign Up</h1>  
 <% flash.each do |type, msg| %>
     <div>
       <%= msg %>
@@ -20,7 +20,7 @@
 
 </div>
 
-    <h1>Sign Up</h1>
+
 
 <%= form_tag users_path do %>
 
@@ -33,8 +33,7 @@
     <label>Password:</label><br>
     <%= password_field_tag :'user[password_digest]' %><br>
 
-    <label>Repeat Password:</label><br>
-    <%= password_field_tag :'user[confirm_password]' %><br>
+    
 
 
     <br>

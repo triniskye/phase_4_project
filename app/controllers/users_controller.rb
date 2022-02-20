@@ -15,12 +15,12 @@ class UsersController < ApplicationController
             redirect_to "/login"
         else
             redirect_to "/signup"
-            @@message = @@message_options[:fail_message]
+            flash.alert = "Error! User already exists."
         end
     end
 
     private
     def user_params
-        params.require(:user).permit(:name, :email, :password_digest, :password_confirmation)
+        params.require(:user).permit(:name, :email, :password_digest)
     end
 end

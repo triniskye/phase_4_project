@@ -1,5 +1,9 @@
 <h1>List A Pet For Adoption</h1>
-
+<% flash.each do |type, msg| %>
+    <div>
+      <%= msg %>
+    </div>
+  <% end %>
     <form action="/pets" method="POST">
         <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token%>">
         <input type="text" name="pet[name]" placeholder="name"><br>
@@ -10,4 +14,3 @@
         <input type="text" name="pet[description]" placeholder="short description"><br>
         <input type="submit" name="submit" class="submit">
     </form>
-

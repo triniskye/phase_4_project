@@ -1,9 +1,9 @@
 
 class SessionsController < ApplicationController
     def create
-        user = User.where(email: login_params[:email])
-        if user.authenticate(login_params[:password])
-            session[:user_id] = user.id
+        @user = User.where(email: login_params[:email])
+        if @user
+            session[:user] = login_params[:email]
             redirect_to "/pets"
         else
             flash.alert = "login failed."
