@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/signup" => "users#signup"
   post "/sessions" => "sessions#create"
   post "/users" => "users#create"
+  get "/account" => "users#account"
 
   root to: "pets#index"
 

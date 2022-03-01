@@ -1,5 +1,14 @@
+require_relative "./sessions_controller.rb"
+
 class PetsController < ApplicationController
+    # @@logged_in = SessionsController.logged_in
+    # @@logged_in == true ? layout "logged_in_nav" : layout "nav"
     layout "nav"
+
+    def nav_selector
+        @logged_in = SessionsController.logged_in
+    end
+
     def index
         @pets = Pet.all
     end

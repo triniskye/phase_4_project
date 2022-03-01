@@ -1,3 +1,5 @@
+
+
 class UsersController < ApplicationController
     @@success = true
     @@message_options = {:success_message => "", :fail_message => "Error, passwords do not match OR user already exists. "}
@@ -17,6 +19,8 @@ class UsersController < ApplicationController
             redirect_to "/signup"
             flash.alert = "Error! User already exists."
         end
+    end
+    def account
     end
 
     private
